@@ -4,7 +4,7 @@ let temp = document.getElementById("temp");
 let image = document.getElementById("img");
 let type = document.getElementById("type");
 let input = document.getElementById("inp");
-//let speed= document.getElementById("speed"); // new entry
+let speed= document.getElementById("speed");
 
 let API =" https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}";
 
@@ -30,7 +30,7 @@ const data = async function(search){
     
     city.innerHTML=search;
     temp.innerHTML=Math.floor(jsonData.main.temp)+"°C";
-   //speed.innerHTML= jsonData.wind.speed; 
+   speed.innerHTML= jsonData.wind.speed; 
     type.innerHTML=jsonData.weather[0].main; 
    
     if(type.innerHTML == "Clouds"){
