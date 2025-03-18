@@ -1,4 +1,4 @@
-let API_key = "d57d07049944a25a3ee286f80f452484";
+let API_key = "784b7496b9f2a045dcf039b7390c321e";
 let city = document.getElementById("city");
 let temp = document.getElementById("temp");
 let image = document.getElementById("img");
@@ -19,18 +19,20 @@ const data = async function(search){
         image.src="error1.png"
         temp.innerHTML=""
     type.innerHTML=""
+    speed.innerHTML=""
     }
     if(jsonData.cod == 404){
         alert("Please Enter Write Location");
         image.src="error2.png";
         temp.innerHTML=""
     type.innerHTML=""
+    speed.innerHTML=""
     }
 
     
     city.innerHTML=search;
     temp.innerHTML=Math.floor(jsonData.main.temp)+"°C";
-   speed.innerHTML= jsonData.wind.speed; 
+   speed.innerHTML= jsonData.wind.speed + "m/s"; 
     type.innerHTML=jsonData.weather[0].main; 
    
     if(type.innerHTML == "Clouds"){
