@@ -22,7 +22,7 @@ const data = async function(search){
     speed.innerHTML=""
     }
     if(jsonData.cod == 404){
-        alert("Please Enter Write Location");
+        alert("Please Enter the correct Location");
         image.src="error2.png";
         temp.innerHTML=""
     type.innerHTML=""
@@ -32,8 +32,8 @@ const data = async function(search){
     
     city.innerHTML=search;
     temp.innerHTML=Math.floor(jsonData.main.temp)+"°C";
-   speed.innerHTML= jsonData.wind.speed + "m/s"; 
     type.innerHTML=jsonData.weather[0].main; 
+    speed.innerHTML= jsonData.wind.speed + "m/s"; 
    
     if(type.innerHTML == "Clouds"){
         image.src="clouds.png"
